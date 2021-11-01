@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: gateway
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          "[/**]":
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: backend
+          uri: "lb://backend/"
+          predicates:
+            - Path=/backend/**
+          filters:
+            - RewritePath=/backend(?<segment>/?.*), $\{segment}
+        - id: attachment
+          uri: "lb://attachment/"
+          predicates:
+              - Path=/attachment/**
+          filters:
+              - RewritePath=/attachment(?<segment>/?.*), $\{segment}
+        - id: configuration
+          uri: "lb://configuration/"
+          predicates:
+            - Path=/configuration/**
+          filters:
+            - RewritePath=/configuration(?<segment>/?.*), $\{segment}
+
+  # profiles:
+  #   active: docker
