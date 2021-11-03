@@ -18,9 +18,6 @@ public class IRegionCustomRepositoryImpl extends IBaseCustomRepositoryImpl<Regio
     @PersistenceContext
     private EntityManager em;
 
-    @Autowired
-    private IRegionRepository iRegionRepository;
-
     @Override
     public EntityPath<Region> getEntityPath() {
         return QRegion.region;
