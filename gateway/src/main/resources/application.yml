@@ -12,6 +12,20 @@ spring:
             allowedMethods: "*"
             allowedHeaders: "*"
       routes:
+        - id: profile
+          uri: "lb://profile/"
+          predicates:
+              - Path=/profile/**
+          filters:
+              - RewritePath=/profile(?<segment>/?.*), $\{segment}
+
+        - id: profile
+          uri: "lb://profile/"
+          predicates:
+              - Path=/profile/**
+          filters:
+              - RewritePath=/profile(?<segment>/?.*), $\{segment}
+
         - id: backend
           uri: "lb://backend/"
           predicates:
@@ -21,9 +35,9 @@ spring:
         - id: attachment
           uri: "lb://attachment/"
           predicates:
-              - Path=/attachment/**
+            - Path=/attachment/**
           filters:
-              - RewritePath=/attachment(?<segment>/?.*), $\{segment}
+            - RewritePath=/attachment(?<segment>/?.*), $\{segment}
         - id: configuration
           uri: "lb://configuration/"
           predicates:

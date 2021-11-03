@@ -9,16 +9,10 @@
         <version>0.0.1</version>
     </parent>
     <groupId>sa.com.stc.vms</groupId>
-    <artifactId>backend</artifactId>
+    <artifactId>profile</artifactId>
     <version>${project.parent.version}</version>
-    <name>backend</name>
-    <description>Demo project for Spring Boot</description>
+    <name>profile</name>
     <dependencies>
-        <dependency>
-            <groupId>sa.com.stc</groupId>
-            <artifactId>common</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc6</artifactId>
@@ -26,18 +20,9 @@
         </dependency>
         <dependency>
             <groupId>sa.com.stc</groupId>
-            <artifactId>profile-client</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>sa.com.stc</groupId>
-            <artifactId>security-configurations</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>sa.com.stc</groupId>
-            <artifactId>configuration-client</artifactId>
+            <artifactId>profile</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
+
 </project>
