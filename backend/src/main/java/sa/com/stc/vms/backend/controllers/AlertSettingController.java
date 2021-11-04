@@ -28,12 +28,12 @@ public class AlertSettingController extends
     }
 
     @Override
-    public AlertSetting MapPostDtoToModel(AlertSettingPostUpdateDto insuranceCompanyPostUpdateDto) {
-        return new AlertSetting(insuranceCompanyPostUpdateDto);
+    public AlertSetting MapPostDtoToModel(AlertSettingPostUpdateDto alertSettingPostUpdateDto) {
+        return new AlertSetting(alertSettingPostUpdateDto);
     }
 
     @Override
-    public AlertSetting MapUpdateDtoToModel(AlertSettingPostUpdateDto insuranceCompanyPostUpdateDto) {
-        return new AlertSetting(insuranceCompanyPostUpdateDto);
+    public AlertSetting MapUpdateDtoToModel(AlertSettingPostUpdateDto alertSettingPostUpdateDto) {
+        return new AlertSetting(alertSettingPostUpdateDto);
     }
 }
