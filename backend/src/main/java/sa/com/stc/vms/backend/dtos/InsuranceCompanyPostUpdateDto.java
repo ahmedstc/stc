@@ -1,6 +1,6 @@
 package sa.com.stc.vms.backend.dtos;
 
-public class RegionPostUpdateDto {
+public class InsuranceCompanyPostUpdateDto {
 
     private String nameAr;
     private String nameEn;

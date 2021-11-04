@@ -1,22 +1,22 @@
 package sa.com.stc.vms.backend.dtos;
 
 import sa.com.stc.common.models.BaseModelDto;
-import sa.com.stc.vms.backend.models.Region;
+import sa.com.stc.vms.backend.models.InsuranceCompany;
 
 import java.util.UUID;
 
-public class RegionDto extends BaseModelDto {
+public class InsuranceCompanyDto extends BaseModelDto {
     private String nameAr;
     private String nameEn;
 
-    public RegionDto() {
+    public InsuranceCompanyDto() {
     }
 
-    public RegionDto(UUID id) {
+    public InsuranceCompanyDto(UUID id) {
         super(id);
     }
 
-    public RegionDto(Region model) {
+    public InsuranceCompanyDto(InsuranceCompany model) {
         super(model);
         this.nameAr = model.getNameAr();
         this.nameEn = model.getNameEn();
