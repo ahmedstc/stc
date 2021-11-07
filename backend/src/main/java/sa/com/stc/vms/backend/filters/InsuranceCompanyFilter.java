@@ -5,6 +5,7 @@ import sa.com.stc.common.filters.BaseFilter;
 public class InsuranceCompanyFilter extends BaseFilter {
     private String nameAR;
     private String nameEN;
+    private String email;
 
     public String getNameAR() {
         return nameAR;
@@ -20,5 +21,13 @@ public class InsuranceCompanyFilter extends BaseFilter {
 
     public void setNameEN(String nameEN) {
         this.nameEN = nameEN;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
