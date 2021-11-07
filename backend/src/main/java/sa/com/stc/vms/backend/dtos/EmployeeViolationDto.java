@@ -1,6 +1,7 @@
 package sa.com.stc.vms.backend.dtos;
 
 import sa.com.stc.common.models.BaseModelDto;
+import sa.com.stc.configurationdefinition.dtos.ArabicEnglishLookup;
 import sa.com.stc.vms.backend.models.EmployeeViolation;
 
 import java.util.UUID;
@@ -8,6 +9,8 @@ import java.util.UUID;
 public class EmployeeViolationDto extends BaseModelDto {
     private String nameAr;
     private String nameEn;
+    private UUID employeeViolationTypeLookupId;
+    private ArabicEnglishLookup employeeViolationTypeLookup;
 
     public EmployeeViolationDto() {
     }
@@ -20,6 +23,7 @@ public class EmployeeViolationDto extends BaseModelDto {
         super(model);
         this.nameAr = model.getNameAr();
         this.nameEn = model.getNameEn();
+        this.employeeViolationTypeLookupId = model.getEmployeeViolationTypeLookupId();
     }
 
     public String getNameAr() {
@@ -36,5 +40,21 @@ public class EmployeeViolationDto extends BaseModelDto {
 
     public void setNameEn(String nameEn) {
         this.nameEn = nameEn;
+    }
+
+    public UUID getEmployeeViolationTypeLookupId() {
+        return employeeViolationTypeLookupId;
+    }
+
+    public void setEmployeeViolationTypeLookupId(UUID employeeViolationTypeLookupId) {
+        this.employeeViolationTypeLookupId = employeeViolationTypeLookupId;
+    }
+
+    public ArabicEnglishLookup getEmployeeViolationTypeLookup() {
+        return employeeViolationTypeLookup;
+    }
+
+    public void setEmployeeViolationTypeLookup(ArabicEnglishLookup employeeViolationTypeLookup) {
+        this.employeeViolationTypeLookup = employeeViolationTypeLookup;
     }
 }

@@ -1,5 +1,6 @@
 package sa.com.stc.vms.backend.models;
 
+import org.hibernate.annotations.Type;
 import sa.com.stc.common.models.BaseModel;
 import sa.com.stc.vms.backend.dtos.EmployeeViolationPostUpdateDto;
 
@@ -13,6 +14,9 @@ public class EmployeeViolation extends BaseModel {
     private String nameAr;
     @Column
     private String nameEn;
+    @Column
+    @Type(type = "org.hibernate.type.UUIDCharType")
+    private UUID employeeViolationTypeLookupId;
 
     public EmployeeViolation() {
     }
@@ -25,6 +29,7 @@ public class EmployeeViolation extends BaseModel {
         super(UUID.randomUUID());
         this.nameAr = dto.getNameAr();
         this.nameEn = dto.getNameEn();
+        this.employeeViolationTypeLookupId = dto.getEmployeeViolationTypeLookupId();
     }
 
     public String getNameAr() {
@@ -41,5 +46,13 @@ public class EmployeeViolation extends BaseModel {
 
     public void setNameEn(String nameEn) {
         this.nameEn = nameEn;
+    }
+
+    public UUID getEmployeeViolationTypeLookupId() {
+        return employeeViolationTypeLookupId;
+    }
+
+    public void setEmployeeViolationTypeLookupId(UUID employeeViolationTypeLookupId) {
+        this.employeeViolationTypeLookupId = employeeViolationTypeLookupId;
     }
 }
