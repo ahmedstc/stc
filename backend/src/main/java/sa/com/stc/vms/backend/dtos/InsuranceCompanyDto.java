@@ -8,6 +8,7 @@ import java.util.UUID;
 public class InsuranceCompanyDto extends BaseModelDto {
     private String nameAr;
     private String nameEn;
+    private String email;
 
     public InsuranceCompanyDto() {
     }
@@ -36,5 +37,13 @@ public class InsuranceCompanyDto extends BaseModelDto {
 
     public void setNameEn(String nameEn) {
         this.nameEn = nameEn;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

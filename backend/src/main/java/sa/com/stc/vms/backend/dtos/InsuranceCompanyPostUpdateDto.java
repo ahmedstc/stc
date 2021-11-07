@@ -4,6 +4,7 @@ public class InsuranceCompanyPostUpdateDto {
 
     private String nameAr;
     private String nameEn;
+    private String email;
 
     public String getNameAr() {
         return nameAr;
@@ -19,5 +20,13 @@ public class InsuranceCompanyPostUpdateDto {
 
     public void setNameEn(String nameEn) {
         this.nameEn = nameEn;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

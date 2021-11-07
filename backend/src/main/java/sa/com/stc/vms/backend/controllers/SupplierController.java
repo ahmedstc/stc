@@ -28,12 +28,12 @@ public class SupplierController extends
     }
 
     @Override
-    public Supplier MapPostDtoToModel(SupplierPostUpdateDto insuranceCompanyPostUpdateDto) {
-        return new Supplier(insuranceCompanyPostUpdateDto);
+    public Supplier MapPostDtoToModel(SupplierPostUpdateDto supplierPostUpdateDto) {
+        return new Supplier(supplierPostUpdateDto);
     }
 
     @Override
-    public Supplier MapUpdateDtoToModel(SupplierPostUpdateDto insuranceCompanyPostUpdateDto) {
-        return new Supplier(insuranceCompanyPostUpdateDto);
+    public Supplier MapUpdateDtoToModel(SupplierPostUpdateDto supplierPostUpdateDto) {
+        return new Supplier(supplierPostUpdateDto);
     }
 }

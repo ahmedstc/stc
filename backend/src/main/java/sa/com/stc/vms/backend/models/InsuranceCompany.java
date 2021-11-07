@@ -14,6 +14,8 @@ public class InsuranceCompany extends BaseModel {
     private String nameAr;
     @Column
     private String nameEn;
+    @Column
+    private String email;
 
     public InsuranceCompany() {
     }
@@ -42,5 +44,13 @@ public class InsuranceCompany extends BaseModel {
 
     public void setNameEn(String nameEn) {
         this.nameEn = nameEn;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
