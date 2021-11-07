@@ -1,5 +1,6 @@
 package sa.com.stc.vms.backend.models;
 
+import org.hibernate.annotations.Type;
 import sa.com.stc.common.models.BaseModel;
 import sa.com.stc.vms.backend.dtos.AlertSettingPostUpdateDto;
 
@@ -13,6 +14,9 @@ public class AlertSetting extends BaseModel {
     private String nameAr;
     @Column
     private String nameEn;
+    @Column
+    @Type(type = "org.hibernate.type.UUIDCharType")
+    private UUID alertTypeLookupId;
 
     public AlertSetting() {
     }
@@ -25,6 +29,7 @@ public class AlertSetting extends BaseModel {
         super(UUID.randomUUID());
         this.nameAr = dto.getNameAr();
         this.nameEn = dto.getNameEn();
+        this.alertTypeLookupId = dto.getAlertTypeLookupId();
     }
 
     public String getNameAr() {
@@ -41,5 +46,13 @@ public class AlertSetting extends BaseModel {
 
     public void setNameEn(String nameEn) {
         this.nameEn = nameEn;
+    }
+
+    public UUID getAlertTypeLookupId() {
+        return alertTypeLookupId;
+    }
+
+    public void setAlertTypeLookupId(UUID alertTypeLookupId) {
+        this.alertTypeLookupId = alertTypeLookupId;
     }
 }
