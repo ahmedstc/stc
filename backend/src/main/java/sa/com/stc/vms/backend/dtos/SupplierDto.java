@@ -1,6 +1,7 @@
 package sa.com.stc.vms.backend.dtos;
 
 import sa.com.stc.common.models.BaseModelDto;
+import sa.com.stc.configurationdefinition.dtos.ArabicEnglishLookup;
 import sa.com.stc.vms.backend.models.Supplier;
 
 import java.util.UUID;
@@ -8,6 +9,8 @@ import java.util.UUID;
 public class SupplierDto extends BaseModelDto {
     private String nameAr;
     private String nameEn;
+    private UUID supplierTypeLookupId;
+    private ArabicEnglishLookup supplierTypeLookup;
 
     public SupplierDto() {
     }
@@ -20,6 +23,7 @@ public class SupplierDto extends BaseModelDto {
         super(model);
         this.nameAr = model.getNameAr();
         this.nameEn = model.getNameEn();
+        this.supplierTypeLookupId = model.getSupplierTypeLookupId();
     }
 
     public String getNameAr() {
@@ -36,5 +40,21 @@ public class SupplierDto extends BaseModelDto {
 
     public void setNameEn(String nameEn) {
         this.nameEn = nameEn;
+    }
+
+    public UUID getSupplierTypeLookupId() {
+        return supplierTypeLookupId;
+    }
+
+    public void setSupplierTypeLookupId(UUID supplierTypeLookupId) {
+        this.supplierTypeLookupId = supplierTypeLookupId;
+    }
+
+    public ArabicEnglishLookup getSupplierTypeLookup() {
+        return supplierTypeLookup;
+    }
+
+    public void setSupplierTypeLookup(ArabicEnglishLookup supplierTypeLookup) {
+        this.supplierTypeLookup = supplierTypeLookup;
     }
 }
