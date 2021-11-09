@@ -28,12 +28,12 @@ public class PlateSettingController extends
     }
 
     @Override
-    public PlateSetting MapPostDtoToModel(PlateSettingPostUpdateDto employeeViolationPostUpdateDto) {
-        return new PlateSetting(employeeViolationPostUpdateDto);
+    public PlateSetting MapPostDtoToModel(PlateSettingPostUpdateDto plateSettingPostUpdateDto) {
+        return new PlateSetting(plateSettingPostUpdateDto);
     }
 
     @Override
-    public PlateSetting MapUpdateDtoToModel(PlateSettingPostUpdateDto employeeViolationPostUpdateDto) {
-        return new PlateSetting(employeeViolationPostUpdateDto);
+    public PlateSetting MapUpdateDtoToModel(PlateSettingPostUpdateDto plateSettingPostUpdateDto) {
+        return new PlateSetting(plateSettingPostUpdateDto);
     }
 }
