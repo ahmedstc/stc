@@ -7,8 +7,10 @@ import sa.com.stc.vms.backend.models.EmployeeViolation;
 import java.util.UUID;
 
 public class EmployeeViolationDto extends BaseModelDto {
-    private String nameAr;
-    private String nameEn;
+    private String name;
+    private String description;
+    private String noticeAr;
+    private String noticeEn;
     private UUID employeeViolationTypeLookupId;
     private ArabicEnglishLookup employeeViolationTypeLookup;
 
@@ -21,25 +23,43 @@ public class EmployeeViolationDto extends BaseModelDto {
 
     public EmployeeViolationDto(EmployeeViolation model) {
         super(model);
-        this.nameAr = model.getNameAr();
-        this.nameEn = model.getNameEn();
+        this.name = model.getName();
+        this.description = model.getDescription();
+        this.noticeAr = model.getNoticeAr();
+        this.noticeEn = model.getNoticeEn();
         this.employeeViolationTypeLookupId = model.getEmployeeViolationTypeLookupId();
     }
 
-    public String getNameAr() {
-        return nameAr;
+    public String getName() {
+        return name;
     }
 
-    public void setNameAr(String nameAr) {
-        this.nameAr = nameAr;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getNameEn() {
-        return nameEn;
+    public String getDescription() {
+        return description;
     }
 
-    public void setNameEn(String nameEn) {
-        this.nameEn = nameEn;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getNoticeAr() {
+        return noticeAr;
+    }
+
+    public void setNoticeAr(String noticeAr) {
+        this.noticeAr = noticeAr;
+    }
+
+    public String getNoticeEn() {
+        return noticeEn;
+    }
+
+    public void setNoticeEn(String noticeEn) {
+        this.noticeEn = noticeEn;
     }
 
     public UUID getEmployeeViolationTypeLookupId() {

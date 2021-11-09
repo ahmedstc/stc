@@ -11,9 +11,13 @@ import java.util.UUID;
 @Entity
 public class EmployeeViolation extends BaseModel {
     @Column
-    private String nameAr;
+    private String name;
     @Column
-    private String nameEn;
+    private String description;
+    @Column
+    private String noticeAr;
+    @Column
+    private String noticeEn;
     @Column
     @Type(type = "org.hibernate.type.UUIDCharType")
     private UUID employeeViolationTypeLookupId;
@@ -27,25 +31,43 @@ public class EmployeeViolation extends BaseModel {
 
     public EmployeeViolation(EmployeeViolationPostUpdateDto dto) {
         super(UUID.randomUUID());
-        this.nameAr = dto.getNameAr();
-        this.nameEn = dto.getNameEn();
+        this.name = dto.getName();
+        this.description = dto.getDescription();
+        this.noticeAr = dto.getNoticeAr();
+        this.noticeEn = dto.getNoticeEn();
         this.employeeViolationTypeLookupId = dto.getEmployeeViolationTypeLookupId();
     }
 
-    public String getNameAr() {
-        return nameAr;
+    public String getName() {
+        return name;
     }
 
-    public void setNameAr(String nameAr) {
-        this.nameAr = nameAr;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getNameEn() {
-        return nameEn;
+    public String getDescription() {
+        return description;
     }
 
-    public void setNameEn(String nameEn) {
-        this.nameEn = nameEn;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getNoticeAr() {
+        return noticeAr;
+    }
+
+    public void setNoticeAr(String noticeAr) {
+        this.noticeAr = noticeAr;
+    }
+
+    public String getNoticeEn() {
+        return noticeEn;
+    }
+
+    public void setNoticeEn(String noticeEn) {
+        this.noticeEn = noticeEn;
     }
 
     public UUID getEmployeeViolationTypeLookupId() {
