@@ -20,8 +20,7 @@ public class VehicleTypeAndPrice extends BaseModel {
     private UUID priceStatusLookupId;
     @Column
     private Integer dailyRentForPriceSegment;
-    @Column
-    @ManyToOne
+    @ManyToOne(optional = false)
     private VehicleRequest vehicleRequest;
 
     public VehicleTypeAndPrice() {
