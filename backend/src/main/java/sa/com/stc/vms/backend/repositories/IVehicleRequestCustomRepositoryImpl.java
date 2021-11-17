@@ -1,6 +1,7 @@
 package sa.com.stc.vms.backend.repositories;
 
 import com.querydsl.core.types.EntityPath;
+import com.querydsl.jpa.JPQLQuery;
 import org.springframework.stereotype.Repository;
 import sa.com.stc.common.repositories.IBaseCustomRepositoryImpl;
 import sa.com.stc.vms.backend.filters.VehicleRequestFilter;
@@ -30,5 +31,29 @@ public class IVehicleRequestCustomRepositoryImpl extends IBaseCustomRepositoryIm
     @Override
     public VehicleRequestFilter getFilterInstance() {
         return new VehicleRequestFilter();
+    }
+
+    @Override
+    public <E> JPQLQuery<E> queryForFilter(EntityPath<? extends VehicleRequest> pathToEntity, JPQLQuery<E> query,
+                                           VehicleRequestFilter filter) {
+        var result = super.queryForFilter(pathToEntity, query, filter);
+        var entityPath = new QVehicleRequest(pathToEntity.toString());
+
+        if (filter.getRequestNumber() != null) {
+            result = result.where(entityPath.requestNumber.eq(filter.getRequestNumber()));
+        }
+        if (filter.getRequestName() != null) {
+            result = result.where(entityPath.requestName.eq(filter.getRequestName()));
+        }
+        if (filter.getRequestStatus() != null) {
+            result = result.where(entityPath.requestStatus.eq(filter.getRequestStatus()));
+        }
+        if (filter.getCreatedById() != null) {
+            result = result.where(entityPath.createdBy.eq(filter.getCreatedById()));
+        }
+        if (filter.getCreationDate() != null) {
+            result = result.where(entityPath.createdOn.eq(filter.getCreationDate()));
+        }
+        return result;
     }
 }

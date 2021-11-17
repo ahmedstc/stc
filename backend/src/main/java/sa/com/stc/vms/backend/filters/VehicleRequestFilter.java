@@ -2,11 +2,15 @@ package sa.com.stc.vms.backend.filters;
 
 import sa.com.stc.common.filters.BaseFilter;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 public class VehicleRequestFilter extends BaseFilter {
     private Integer requestNumber;
     private String requestName;
     private String requestStatus;
     private String notes;
+    private Timestamp creationDate;
 
     public Integer getRequestNumber() {
         return requestNumber;
@@ -38,5 +42,13 @@ public class VehicleRequestFilter extends BaseFilter {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public void setCreationDate(Timestamp creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public Timestamp getCreationDate() {
+        return creationDate;
     }
 }
