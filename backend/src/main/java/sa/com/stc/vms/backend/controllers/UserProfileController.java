@@ -1,6 +1,5 @@
 package sa.com.stc.vms.backend.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sa.com.stc.common.controllers.BaseCRUDCustomController;
@@ -11,12 +10,9 @@ import sa.com.stc.vms.backend.models.UserProfile;
 import sa.com.stc.vms.backend.services.IUserProfileService;
 
 @RestController
-@RequestMapping("/api/userProfile")
+@RequestMapping("/api/user-profile")
 public class UserProfileController extends
         BaseCRUDCustomController<UserProfile, UserProfileDto, UserProfilePostUpdateDto, UserProfilePostUpdateDto, UserProfileFilter, IUserProfileService> {
-
-    @Autowired
-    IUserProfileService iUserProfileService;
 
     public UserProfileController(IUserProfileService service) {
         super(service);

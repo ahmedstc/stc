@@ -1,6 +1,5 @@
 package sa.com.stc.vms.backend.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sa.com.stc.common.controllers.BaseCRUDCustomController;
@@ -11,12 +10,9 @@ import sa.com.stc.vms.backend.models.VehicleRequest;
 import sa.com.stc.vms.backend.services.IVehicleRequestService;
 
 @RestController
-@RequestMapping("/api/vehicleRequest")
+@RequestMapping("/api/vehicle-request")
 public class VehicleRequestController extends
         BaseCRUDCustomController<VehicleRequest, VehicleRequestDto, VehicleRequestPostUpdateDto, VehicleRequestPostUpdateDto, VehicleRequestFilter, IVehicleRequestService> {
-
-    @Autowired
-    IVehicleRequestService iVehicleRequestService;
 
     public VehicleRequestController(IVehicleRequestService service) {
         super(service);

@@ -1,6 +1,5 @@
 package sa.com.stc.vms.backend.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sa.com.stc.common.controllers.BaseCRUDCustomController;
@@ -11,12 +10,9 @@ import sa.com.stc.vms.backend.models.VehicleTypeAndPrice;
 import sa.com.stc.vms.backend.services.IVehicleTypeAndPriceService;
 
 @RestController
-@RequestMapping("/api/vehicleTypeAndPrice")
+@RequestMapping("/api/vehicle-type-and-price")
 public class VehicleTypeAndPriceController extends
         BaseCRUDCustomController<VehicleTypeAndPrice, VehicleTypeAndPriceDto, VehicleTypeAndPricePostUpdateDto, VehicleTypeAndPricePostUpdateDto, VehicleTypeAndPriceFilter, IVehicleTypeAndPriceService> {
-
-    @Autowired
-    IVehicleTypeAndPriceService iVehicleTypeAndPriceService;
 
     public VehicleTypeAndPriceController(IVehicleTypeAndPriceService service) {
         super(service);

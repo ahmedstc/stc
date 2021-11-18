@@ -1,6 +1,5 @@
 package sa.com.stc.vms.backend.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sa.com.stc.common.controllers.BaseCRUDCustomController;
@@ -11,12 +10,9 @@ import sa.com.stc.vms.backend.models.ServiceCost;
 import sa.com.stc.vms.backend.services.IServiceCostService;
 
 @RestController
-@RequestMapping("/api/serviceCost")
+@RequestMapping("/api/service-cost")
 public class ServiceCostController extends
         BaseCRUDCustomController<ServiceCost, ServiceCostDto, ServiceCostPostUpdateDto, ServiceCostPostUpdateDto, ServiceCostFilter, IServiceCostService> {
-
-    @Autowired
-    IServiceCostService iServiceCostService;
 
     public ServiceCostController(IServiceCostService service) {
         super(service);

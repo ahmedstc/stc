@@ -1,6 +1,5 @@
 package sa.com.stc.vms.backend.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sa.com.stc.common.controllers.BaseCRUDCustomController;
@@ -11,12 +10,9 @@ import sa.com.stc.vms.backend.models.PlateSetting;
 import sa.com.stc.vms.backend.services.IPlateSettingService;
 
 @RestController
-@RequestMapping("/api/plateSetting")
+@RequestMapping("/api/plate-setting")
 public class PlateSettingController extends
         BaseCRUDCustomController<PlateSetting, PlateSettingDto, PlateSettingPostUpdateDto, PlateSettingPostUpdateDto, PlateSettingFilter, IPlateSettingService> {
-
-    @Autowired
-    IPlateSettingService iPlateSettingService;
 
     public PlateSettingController(IPlateSettingService service) {
         super(service);

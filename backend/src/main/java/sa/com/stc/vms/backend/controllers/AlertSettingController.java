@@ -1,6 +1,5 @@
 package sa.com.stc.vms.backend.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sa.com.stc.common.controllers.BaseCRUDCustomController;
@@ -11,12 +10,9 @@ import sa.com.stc.vms.backend.models.AlertSetting;
 import sa.com.stc.vms.backend.services.IAlertSettingService;
 
 @RestController
-@RequestMapping("/api/alertSetting")
+@RequestMapping("/api/alert-setting")
 public class AlertSettingController extends
         BaseCRUDCustomController<AlertSetting, AlertSettingDto, AlertSettingPostUpdateDto, AlertSettingPostUpdateDto, AlertSettingFilter, IAlertSettingService> {
-
-    @Autowired
-    IAlertSettingService iAlertSettingService;
 
     public AlertSettingController(IAlertSettingService service) {
         super(service);

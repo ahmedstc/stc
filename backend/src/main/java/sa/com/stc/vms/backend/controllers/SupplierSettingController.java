@@ -1,6 +1,5 @@
 package sa.com.stc.vms.backend.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sa.com.stc.common.controllers.BaseCRUDCustomController;
@@ -11,12 +10,9 @@ import sa.com.stc.vms.backend.models.SupplierSetting;
 import sa.com.stc.vms.backend.services.ISupplierSettingService;
 
 @RestController
-@RequestMapping("/api/supplierSetting")
+@RequestMapping("/api/supplier-setting")
 public class SupplierSettingController extends
         BaseCRUDCustomController<SupplierSetting, SupplierSettingDto, SupplierSettingPostUpdateDto, SupplierSettingPostUpdateDto, SupplierSettingFilter, ISupplierSettingService> {
-
-    @Autowired
-    ISupplierSettingService iSupplierSettingService;
 
     public SupplierSettingController(ISupplierSettingService service) {
         super(service);

@@ -1,6 +1,5 @@
 package sa.com.stc.vms.backend.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sa.com.stc.common.controllers.BaseCRUDCustomController;
@@ -14,9 +13,6 @@ import sa.com.stc.vms.backend.services.IEmployeeService;
 @RequestMapping("/api/employee")
 public class EmployeeController extends
         BaseCRUDCustomController<Employee, EmployeeDto, EmployeePostUpdateDto, EmployeePostUpdateDto, EmployeeFilter, IEmployeeService> {
-
-    @Autowired
-    IEmployeeService iEmployeeService;
 
     public EmployeeController(IEmployeeService service) {
         super(service);
