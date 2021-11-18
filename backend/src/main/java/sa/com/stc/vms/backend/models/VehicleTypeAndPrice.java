@@ -6,7 +6,6 @@ import sa.com.stc.vms.backend.dtos.VehicleTypeAndPricePostUpdateDto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import java.util.UUID;
 
 @Entity

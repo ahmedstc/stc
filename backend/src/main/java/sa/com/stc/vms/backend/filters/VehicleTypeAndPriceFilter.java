@@ -7,6 +7,7 @@ import java.util.UUID;
 public class VehicleTypeAndPriceFilter extends BaseFilter {
     private UUID vehicleTypeLookupId;
     private UUID priceSegmentLookupId;
+    private UUID priceStatusLookupId;
     private Integer dailyRentForPriceSegment;
     private Boolean isSuggested;
     private Boolean isActual;
@@ -26,6 +27,14 @@ public class VehicleTypeAndPriceFilter extends BaseFilter {
 
     public void setPriceSegmentLookupId(UUID priceSegmentLookupId) {
         this.priceSegmentLookupId = priceSegmentLookupId;
+    }
+
+    public UUID getPriceStatusLookupId() {
+        return priceStatusLookupId;
+    }
+
+    public void setPriceStatusLookupId(UUID priceStatusLookupId) {
+        this.priceStatusLookupId = priceStatusLookupId;
     }
 
     public Integer getDailyRentForPriceSegment() {

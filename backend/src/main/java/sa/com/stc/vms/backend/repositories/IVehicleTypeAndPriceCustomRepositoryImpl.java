@@ -1,6 +1,7 @@
 package sa.com.stc.vms.backend.repositories;
 
 import com.querydsl.core.types.EntityPath;
+import com.querydsl.jpa.JPQLQuery;
 import org.springframework.stereotype.Repository;
 import sa.com.stc.common.repositories.IBaseCustomRepositoryImpl;
 import sa.com.stc.vms.backend.filters.VehicleTypeAndPriceFilter;
@@ -30,5 +31,29 @@ public class IVehicleTypeAndPriceCustomRepositoryImpl extends IBaseCustomReposit
     @Override
     public VehicleTypeAndPriceFilter getFilterInstance() {
         return new VehicleTypeAndPriceFilter();
+    }
+
+    @Override
+    public <E> JPQLQuery<E> queryForFilter(EntityPath<? extends VehicleTypeAndPrice> pathToEntity, JPQLQuery<E> query,
+                                           VehicleTypeAndPriceFilter filter) {
+        var result = super.queryForFilter(pathToEntity, query, filter);
+        var entityPath = new QVehicleTypeAndPrice(pathToEntity.toString());
+
+        if (filter.getVehicleTypeLookupId() != null) {
+            result = result.where(entityPath.vehicleTypeLookupId.eq(filter.getVehicleTypeLookupId()));
+        }
+        if (filter.getPriceSegmentLookupId() != null) {
+            result = result.where(entityPath.priceSegmentLookupId.eq(filter.getPriceSegmentLookupId()));
+        }
+        if (filter.getPriceStatusLookupId() != null) {
+            result = result.where(entityPath.priceStatusLookupId.eq(filter.getPriceStatusLookupId()));
+        }
+        if (filter.getDailyRentForPriceSegment() != null) {
+            result = result.where(entityPath.dailyRentForPriceSegment.eq(filter.getDailyRentForPriceSegment()));
+        }
+        if (filter.getVehicleRequestId() != null) {
+            result = result.where(entityPath.vehicleRequestId.eq(filter.getVehicleRequestId()));
+        }
+        return result;
     }
 }
