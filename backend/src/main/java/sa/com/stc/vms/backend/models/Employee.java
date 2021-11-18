@@ -27,8 +27,9 @@ public class Employee extends BaseModel {
     private String accountStatus;
     @Column
     private String numberOfAssignedVehicles;
-    @ManyToOne(optional = false)
-    private UserProfile userProfile;
+    @Column
+    @Type(type = "org.hibernate.type.UUIDCharType")
+    private UUID userProfileId;
     @Column
     @Type(type = "org.hibernate.type.UUIDCharType")
     private UUID regionLookupId;
@@ -50,7 +51,7 @@ public class Employee extends BaseModel {
         this.preferredLanguage = dto.getPreferredLanguage();
         this.accountStatus = dto.getAccountStatus();
         this.numberOfAssignedVehicles = dto.getNumberOfAssignedVehicles();
-        this.userProfile = dto.getUserProfile();
+        this.userProfileId = dto.getUserProfileId();
         this.regionLookupId = dto.getRegionLookupId();
     }
 
@@ -118,12 +119,12 @@ public class Employee extends BaseModel {
         this.numberOfAssignedVehicles = numberOfAssignedVehicles;
     }
 
-    public UserProfile getUserProfile() {
-        return userProfile;
+    public UUID getUserProfileId() {
+        return userProfileId;
     }
 
-    public void setUserProfile(UserProfile userProfile) {
-        this.userProfile = userProfile;
+    public void setUserProfileId(UUID userProfileId) {
+        this.userProfileId = userProfileId;
     }
 
     public UUID getRegionLookupId() {

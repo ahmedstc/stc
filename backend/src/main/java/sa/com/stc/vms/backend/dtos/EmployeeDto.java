@@ -3,7 +3,6 @@ package sa.com.stc.vms.backend.dtos;
 import sa.com.stc.common.models.BaseModelDto;
 import sa.com.stc.configurationdefinition.dtos.ArabicEnglishLookup;
 import sa.com.stc.vms.backend.models.Employee;
-import sa.com.stc.vms.backend.models.UserProfile;
 
 import java.util.UUID;
 
@@ -16,7 +15,7 @@ public class EmployeeDto extends BaseModelDto {
     private String preferredLanguage;
     private String accountStatus;
     private String numberOfAssignedVehicles;
-    private UserProfile userProfile;
+    private UUID userProfileId;
     private UUID regionLookupId;
     private ArabicEnglishLookup regionLookup;
 
@@ -37,7 +36,7 @@ public class EmployeeDto extends BaseModelDto {
         this.preferredLanguage = model.getPreferredLanguage();
         this.accountStatus = model.getAccountStatus();
         this.numberOfAssignedVehicles = model.getNumberOfAssignedVehicles();
-        this.userProfile = model.getUserProfile();
+        this.userProfileId = model.getUserProfileId();
         this.regionLookupId = model.getRegionLookupId();
     }
 
@@ -105,12 +104,12 @@ public class EmployeeDto extends BaseModelDto {
         this.numberOfAssignedVehicles = numberOfAssignedVehicles;
     }
 
-    public UserProfile getUserProfile() {
-        return userProfile;
+    public UUID getUserProfileId() {
+        return userProfileId;
     }
 
-    public void setUserProfile(UserProfile userProfile) {
-        this.userProfile = userProfile;
+    public void setUserProfileId(UUID userProfileId) {
+        this.userProfileId = userProfileId;
     }
 
     public UUID getRegionLookupId() {

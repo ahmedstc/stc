@@ -1,8 +1,6 @@
 package sa.com.stc.vms.backend.dtos;
 
 
-import sa.com.stc.vms.backend.models.UserProfile;
-
 import java.util.UUID;
 
 public class EmployeePostUpdateDto {
@@ -15,7 +13,7 @@ public class EmployeePostUpdateDto {
     private String preferredLanguage;
     private String accountStatus;
     private String numberOfAssignedVehicles;
-    private UserProfile userProfile;
+    private UUID userProfileId;
     private UUID regionLookupId;
 
     public String getEmployeeId() {
@@ -82,12 +80,12 @@ public class EmployeePostUpdateDto {
         this.numberOfAssignedVehicles = numberOfAssignedVehicles;
     }
 
-    public UserProfile getUserProfile() {
-        return userProfile;
+    public UUID getUserProfileId() {
+        return userProfileId;
     }
 
-    public void setUserProfile(UserProfile userProfile) {
-        this.userProfile = userProfile;
+    public void setUserProfileId(UUID userProfileId) {
+        this.userProfileId = userProfileId;
     }
 
     public UUID getRegionLookupId() {

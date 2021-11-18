@@ -1,8 +1,5 @@
 package sa.com.stc.vms.backend.dtos;
 
-import sa.com.stc.configurationdefinition.dtos.ArabicEnglishLookup;
-import sa.com.stc.vms.backend.models.VehicleRequest;
-
 import java.util.UUID;
 
 public class VehicleTypeAndPricePostUpdateDto {
@@ -13,7 +10,7 @@ public class VehicleTypeAndPricePostUpdateDto {
     private Integer dailyRentForPriceSegment;
     private Boolean isSuggested;
     private Boolean isActual;
-    private VehicleRequest vehicleRequest;
+    private UUID vehicleRequestId;
 
     public UUID getVehicleTypeLookupId() {
         return vehicleTypeLookupId;
@@ -47,11 +44,27 @@ public class VehicleTypeAndPricePostUpdateDto {
         this.dailyRentForPriceSegment = dailyRentForPriceSegment;
     }
 
-    public VehicleRequest getVehicleRequest() {
-        return vehicleRequest;
+    public Boolean getSuggested() {
+        return isSuggested;
     }
 
-    public void setVehicleRequest(VehicleRequest vehicleRequest) {
-        this.vehicleRequest = vehicleRequest;
+    public void setSuggested(Boolean suggested) {
+        isSuggested = suggested;
+    }
+
+    public Boolean getActual() {
+        return isActual;
+    }
+
+    public void setActual(Boolean actual) {
+        isActual = actual;
+    }
+
+    public UUID getVehicleRequestId() {
+        return vehicleRequestId;
+    }
+
+    public void setVehicleRequestId(UUID vehicleRequestId) {
+        this.vehicleRequestId = vehicleRequestId;
     }
 }

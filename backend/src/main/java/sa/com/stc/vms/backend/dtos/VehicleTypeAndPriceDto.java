@@ -2,7 +2,6 @@ package sa.com.stc.vms.backend.dtos;
 
 import sa.com.stc.common.models.BaseModelDto;
 import sa.com.stc.configurationdefinition.dtos.ArabicEnglishLookup;
-import sa.com.stc.vms.backend.models.VehicleRequest;
 import sa.com.stc.vms.backend.models.VehicleTypeAndPrice;
 
 import java.util.UUID;
@@ -15,7 +14,7 @@ public class VehicleTypeAndPriceDto extends BaseModelDto {
     private UUID priceStatusLookupId;
     private ArabicEnglishLookup priceStatusLookup;
     private Integer dailyRentForPriceSegment;
-    private VehicleRequest vehicleRequest;
+    private UUID vehicleRequestId;
 
     public VehicleTypeAndPriceDto() {
     }
@@ -30,7 +29,7 @@ public class VehicleTypeAndPriceDto extends BaseModelDto {
         this.priceSegmentLookupId = model.getPriceSegmentLookupId();
         this.priceStatusLookupId = model.getPriceStatusLookupId();
         this.dailyRentForPriceSegment = model.getDailyRentForPriceSegment();
-        this.vehicleRequest = model.getVehicleRequest();
+        this.vehicleRequestId = model.getVehicleRequestId();
     }
 
     public UUID getVehicleTypeLookupId() {
@@ -65,12 +64,12 @@ public class VehicleTypeAndPriceDto extends BaseModelDto {
         this.priceSegmentLookup = priceSegmentLookup;
     }
 
-    public void setPriceStatusLookupId(UUID priceStatusLookupId) {
-        this.priceStatusLookupId = priceStatusLookupId;
-    }
-
     public UUID getPriceStatusLookupId() {
         return priceStatusLookupId;
+    }
+
+    public void setPriceStatusLookupId(UUID priceStatusLookupId) {
+        this.priceStatusLookupId = priceStatusLookupId;
     }
 
     public Integer getDailyRentForPriceSegment() {
@@ -81,11 +80,19 @@ public class VehicleTypeAndPriceDto extends BaseModelDto {
         this.dailyRentForPriceSegment = dailyRentForPriceSegment;
     }
 
-    public VehicleRequest getVehicleRequest() {
-        return vehicleRequest;
+    public ArabicEnglishLookup getPriceStatusLookup() {
+        return priceStatusLookup;
     }
 
-    public void setVehicleRequest(VehicleRequest vehicleRequest) {
-        this.vehicleRequest = vehicleRequest;
+    public void setPriceStatusLookup(ArabicEnglishLookup priceStatusLookup) {
+        this.priceStatusLookup = priceStatusLookup;
+    }
+
+    public UUID getVehicleRequestId() {
+        return vehicleRequestId;
+    }
+
+    public void setVehicleRequestId(UUID vehicleRequestId) {
+        this.vehicleRequestId = vehicleRequestId;
     }
 }

@@ -1,12 +1,12 @@
 package sa.com.stc.vms.backend.dtos;
 
-import sa.com.stc.vms.backend.models.EmployeeViolation;
+import java.util.UUID;
 
 public class ViolationPenaltyPostUpdateDto {
 
     private Integer penaltyOrder;
     private Integer points;
-    private EmployeeViolation employeeViolation;
+    private UUID employeeViolationId;
 
     public Integer getPenaltyOrder() {
         return penaltyOrder;
@@ -24,11 +24,11 @@ public class ViolationPenaltyPostUpdateDto {
         this.points = points;
     }
 
-    public EmployeeViolation getEmployeeViolation() {
-        return employeeViolation;
+    public UUID getEmployeeViolationId() {
+        return employeeViolationId;
     }
 
-    public void setEmployeeViolation(EmployeeViolation employeeViolation) {
-        this.employeeViolation = employeeViolation;
+    public void setEmployeeViolationId(UUID employeeViolationId) {
+        this.employeeViolationId = employeeViolationId;
     }
 }

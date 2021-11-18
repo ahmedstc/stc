@@ -1,12 +1,13 @@
 package sa.com.stc.vms.backend.filters;
 
 import sa.com.stc.common.filters.BaseFilter;
-import sa.com.stc.vms.backend.models.EmployeeViolation;
+
+import java.util.UUID;
 
 public class ViolationPenaltyFilter extends BaseFilter {
     private Integer penaltyOrder;
     private Integer points;
-    private EmployeeViolation employeeViolation;
+    private UUID employeeViolationId;
 
     public Integer getPenaltyOrder() {
         return penaltyOrder;
@@ -24,11 +25,11 @@ public class ViolationPenaltyFilter extends BaseFilter {
         this.points = points;
     }
 
-    public EmployeeViolation getEmployeeViolation() {
-        return employeeViolation;
+    public UUID getEmployeeViolationId() {
+        return employeeViolationId;
     }
 
-    public void setEmployeeViolation(EmployeeViolation employeeViolation) {
-        this.employeeViolation = employeeViolation;
+    public void setEmployeeViolationId(UUID employeeViolationId) {
+        this.employeeViolationId = employeeViolationId;
     }
 }

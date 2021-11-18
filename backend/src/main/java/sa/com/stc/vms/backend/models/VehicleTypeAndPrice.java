@@ -20,8 +20,9 @@ public class VehicleTypeAndPrice extends BaseModel {
     private UUID priceStatusLookupId;
     @Column
     private Integer dailyRentForPriceSegment;
-    @ManyToOne(optional = false)
-    private VehicleRequest vehicleRequest;
+    @Column
+    @Type(type = "org.hibernate.type.UUIDCharType")
+    private UUID vehicleRequestId;
 
     public VehicleTypeAndPrice() {
     }
@@ -36,7 +37,7 @@ public class VehicleTypeAndPrice extends BaseModel {
         this.priceSegmentLookupId = dto.getPriceSegmentLookupId();
         this.priceStatusLookupId = dto.getPriceStatusLookupId();
         this.dailyRentForPriceSegment = dto.getDailyRentForPriceSegment();
-        this.vehicleRequest = dto.getVehicleRequest();
+        this.vehicleRequestId = dto.getVehicleRequestId();
     }
 
 
@@ -64,19 +65,19 @@ public class VehicleTypeAndPrice extends BaseModel {
         this.dailyRentForPriceSegment = dailyRentForPriceSegment;
     }
 
-    public void setPriceStatusLookupId(UUID priceStatusLookupId) {
-        this.priceStatusLookupId = priceStatusLookupId;
-    }
-
     public UUID getPriceStatusLookupId() {
         return priceStatusLookupId;
     }
 
-    public VehicleRequest getVehicleRequest() {
-        return vehicleRequest;
+    public void setPriceStatusLookupId(UUID priceStatusLookupId) {
+        this.priceStatusLookupId = priceStatusLookupId;
     }
 
-    public void setVehicleRequest(VehicleRequest vehicleRequest) {
-        this.vehicleRequest = vehicleRequest;
+    public UUID getVehicleRequestId() {
+        return vehicleRequestId;
+    }
+
+    public void setVehicleRequestId(UUID vehicleRequestId) {
+        this.vehicleRequestId = vehicleRequestId;
     }
 }

@@ -1,11 +1,11 @@
 package sa.com.stc.vms.backend.models;
 
+import org.hibernate.annotations.Type;
 import sa.com.stc.common.models.BaseModel;
 import sa.com.stc.vms.backend.dtos.ViolationPenaltyPostUpdateDto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import java.util.UUID;
 
 @Entity
@@ -14,8 +14,9 @@ public class ViolationPenalty extends BaseModel {
     private Integer penaltyOrder;
     @Column
     private Integer points;
-    @ManyToOne(optional = false)
-    private EmployeeViolation employeeViolation;
+    @Column
+    @Type(type = "org.hibernate.type.UUIDCharType")
+    private UUID employeeViolationId;
 
     public ViolationPenalty() {
     }
@@ -28,7 +29,7 @@ public class ViolationPenalty extends BaseModel {
         super(UUID.randomUUID());
         this.penaltyOrder = dto.getPenaltyOrder();
         this.points = dto.getPoints();
-        this.employeeViolation = dto.getEmployeeViolation();
+        this.employeeViolationId = dto.getEmployeeViolationId();
     }
 
     public Integer getPenaltyOrder() {
@@ -47,11 +48,11 @@ public class ViolationPenalty extends BaseModel {
         this.points = points;
     }
 
-    public EmployeeViolation getEmployeeViolation() {
-        return employeeViolation;
+    public UUID getEmployeeViolationId() {
+        return employeeViolationId;
     }
 
-    public void setEmployeeViolation(EmployeeViolation employeeViolation) {
-        this.employeeViolation = employeeViolation;
+    public void setEmployeeViolationId(UUID employeeViolationId) {
+        this.employeeViolationId = employeeViolationId;
     }
 }

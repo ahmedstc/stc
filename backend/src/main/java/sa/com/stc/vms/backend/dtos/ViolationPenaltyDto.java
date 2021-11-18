@@ -1,7 +1,6 @@
 package sa.com.stc.vms.backend.dtos;
 
 import sa.com.stc.common.models.BaseModelDto;
-import sa.com.stc.vms.backend.models.EmployeeViolation;
 import sa.com.stc.vms.backend.models.ViolationPenalty;
 
 import java.util.UUID;
@@ -10,7 +9,7 @@ public class ViolationPenaltyDto extends BaseModelDto {
 
     private Integer penaltyOrder;
     private Integer points;
-    private EmployeeViolation employeeViolation;
+    private UUID employeeViolationId;
 
     public ViolationPenaltyDto() {
     }
@@ -23,7 +22,7 @@ public class ViolationPenaltyDto extends BaseModelDto {
         super(model);
         this.penaltyOrder = model.getPenaltyOrder();
         this.points = model.getPoints();
-        this.employeeViolation = model.getEmployeeViolation();
+        this.employeeViolationId = model.getEmployeeViolationId();
     }
 
     public Integer getPenaltyOrder() {
@@ -42,11 +41,11 @@ public class ViolationPenaltyDto extends BaseModelDto {
         this.points = points;
     }
 
-    public EmployeeViolation getEmployeeViolation() {
-        return employeeViolation;
+    public UUID getEmployeeViolationId() {
+        return employeeViolationId;
     }
 
-    public void setEmployeeViolation(EmployeeViolation employeeViolation) {
-        this.employeeViolation = employeeViolation;
+    public void setEmployeeViolationId(UUID employeeViolationId) {
+        this.employeeViolationId = employeeViolationId;
     }
 }

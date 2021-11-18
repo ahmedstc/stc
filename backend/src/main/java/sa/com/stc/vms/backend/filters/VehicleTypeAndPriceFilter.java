@@ -1,7 +1,6 @@
 package sa.com.stc.vms.backend.filters;
 
 import sa.com.stc.common.filters.BaseFilter;
-import sa.com.stc.vms.backend.models.VehicleRequest;
 
 import java.util.UUID;
 
@@ -11,7 +10,7 @@ public class VehicleTypeAndPriceFilter extends BaseFilter {
     private Integer dailyRentForPriceSegment;
     private Boolean isSuggested;
     private Boolean isActual;
-    private VehicleRequest vehicleRequest;
+    private UUID vehicleRequestId;
 
     public UUID getVehicleTypeLookupId() {
         return vehicleTypeLookupId;
@@ -53,11 +52,11 @@ public class VehicleTypeAndPriceFilter extends BaseFilter {
         isActual = actual;
     }
 
-    public VehicleRequest getVehicleRequest() {
-        return vehicleRequest;
+    public UUID getVehicleRequestId() {
+        return vehicleRequestId;
     }
 
-    public void setVehicleRequest(VehicleRequest vehicleRequest) {
-        this.vehicleRequest = vehicleRequest;
+    public void setVehicleRequestId(UUID vehicleRequestId) {
+        this.vehicleRequestId = vehicleRequestId;
     }
 }
